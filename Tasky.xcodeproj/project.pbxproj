@@ -17,6 +17,10 @@
 		C6A16B8128218C6A007D2AC1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A16B6B28218C66007D2AC1 /* Persistence.swift */; };
 		C6A16B8228218C6A007D2AC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6A16B6C28218C69007D2AC1 /* Assets.xcassets */; };
 		C6A16B8328218C6A007D2AC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6A16B6C28218C69007D2AC1 /* Assets.xcassets */; };
+		C6A16B8F28218D0D007D2AC1 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A16B8E28218D0D007D2AC1 /* TaskViewModel.swift */; };
+		C6A16B9128218D3A007D2AC1 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A16B9028218D3A007D2AC1 /* Home.swift */; };
+		C6A16B9328218D47007D2AC1 /* AddNewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A16B9228218D47007D2AC1 /* AddNewTaskView.swift */; };
+		C6B81E622821F76E00FCC55A /* DynamicFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B81E612821F76E00FCC55A /* DynamicFilterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		C6A16B7128218C69007D2AC1 /* Tasky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6A16B7728218C69007D2AC1 /* Tasky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6A16B7928218C69007D2AC1 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		C6A16B8E28218D0D007D2AC1 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		C6A16B9028218D3A007D2AC1 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		C6A16B9228218D47007D2AC1 /* AddNewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskView.swift; sourceTree = "<group>"; };
+		C6B81E612821F76E00FCC55A /* DynamicFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFilterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,8 @@
 		C6A16B6628218C66007D2AC1 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				C6A16B8D28218CDA007D2AC1 /* View */,
+				C6A16B8C28218CD2007D2AC1 /* ViewModel */,
 				C6A16B6928218C66007D2AC1 /* TaskyApp.swift */,
 				C6A16B6A28218C66007D2AC1 /* ContentView.swift */,
 				C6A16B6B28218C66007D2AC1 /* Persistence.swift */,
@@ -84,6 +94,24 @@
 				C6A16B7928218C69007D2AC1 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		C6A16B8C28218CD2007D2AC1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C6A16B8E28218D0D007D2AC1 /* TaskViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C6A16B8D28218CDA007D2AC1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C6A16B9228218D47007D2AC1 /* AddNewTaskView.swift */,
+				C6A16B9028218D3A007D2AC1 /* Home.swift */,
+				C6B81E612821F76E00FCC55A /* DynamicFilterView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,10 +212,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6B81E622821F76E00FCC55A /* DynamicFilterView.swift in Sources */,
 				C6A16B7C28218C69007D2AC1 /* TaskyApp.swift in Sources */,
 				C6A16B8028218C6A007D2AC1 /* Persistence.swift in Sources */,
 				C6A16B7A28218C69007D2AC1 /* Tasky.xcdatamodeld in Sources */,
+				C6A16B8F28218D0D007D2AC1 /* TaskViewModel.swift in Sources */,
+				C6A16B9128218D3A007D2AC1 /* Home.swift in Sources */,
 				C6A16B7E28218C6A007D2AC1 /* ContentView.swift in Sources */,
+				C6A16B9328218D47007D2AC1 /* AddNewTaskView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
