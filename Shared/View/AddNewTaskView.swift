@@ -9,7 +9,8 @@ import SwiftUI
 import CoreData
 
 struct AddNewTaskView: View {
-    @EnvironmentObject var taskModel: TaskViewModel
+    @StateObject var taskModel: TaskViewModel
+    
     let colors = ["Yellow", "Red", "Blue", "Purple", "Green"]
     let taskTypes = ["Basic", "Important", "Urgent"]
     
@@ -24,6 +25,7 @@ struct AddNewTaskView: View {
                 .frame(maxWidth: .infinity)
                 .overlay(alignment: .leading) {
                     Button {
+                        taskModel.editTask = nil
                         env.dismiss()
                     } label: {
                         Image(systemName: "arrow.left")
@@ -146,8 +148,13 @@ struct AddNewTaskView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             
             Button {
-                if taskModel.addTask(context: env.managedObjectContext) {
+                if taskModel.editTask != nil {
+                    taskModel.editTask(context: env.managedObjectContext)
                     env.dismiss()
+                } else {
+                    if taskModel.addTask(context: env.managedObjectContext) {
+                        env.dismiss()
+                    }
                 }
             } label: {
                 Text("Save Task")
@@ -191,9 +198,9 @@ struct AddNewTaskView: View {
     }
 }
 
-struct AddNewTaskView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddNewTaskView()
-            .environmentObject(TaskViewModel())
-    }
-}
+//struct AddNewTaskView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddNewTaskView()
+//            .environmentObject(TaskViewModel())
+//    }
+//}

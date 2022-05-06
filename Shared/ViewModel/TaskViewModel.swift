@@ -9,6 +9,7 @@ import SwiftUI
 import CoreData
 
 class TaskViewModel: ObservableObject {
+    
     @Published var currentTab = "Today"
     
     @Published var openEditTask = false
@@ -25,15 +26,9 @@ class TaskViewModel: ObservableObject {
     }
     
     func addTask(context: NSManagedObjectContext) -> Bool {
-        var task: Task!
-        if let editTask = editTask {
-            task = editTask
-        } else {
-            task = Task(context: context)
-            task.id = UUID()
-        }
+        let task = Task(context: context)
         
-
+        task.id = UUID()
         task.title = taskTitle
         task.color = taskColor
         task.deadline = taskDeadline
@@ -44,6 +39,21 @@ class TaskViewModel: ObservableObject {
             return true
         }
         return false
+    }
+    
+    func editTask(context: NSManagedObjectContext) {
+        var task: Task!
+        if let editTask = editTask {
+            task = editTask
+        }
+        task.title = taskTitle
+        task.color = taskColor
+        task.deadline = taskDeadline
+        task.type = taskType
+        task.isCompleted = false
+        
+        try? context.save()
+        editTask = nil
     }
     
     func resetTaskData() {
@@ -61,5 +71,4 @@ class TaskViewModel: ObservableObject {
             taskDeadline = editTask.deadline ?? Date()
         }
     }
-    
 }
